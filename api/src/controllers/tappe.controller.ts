@@ -64,39 +64,6 @@ export async function getLuoghi(req: Request, res: Response): Promise<void> {
     }
 }
 
-/*export async function getPartenze(req: Request, res: Response) {
-    try {
-        const { data, error } = await supabase
-            .from("tappe")
-            .select("partenza");
-
-        if (error) {
-            res.status(400).json({
-                status: 400,
-                message: 'Errore recupero partenze',
-                details: error.message
-            });
-            return;
-        }
-
-        const partenze = data.map((item) => item.partenza);
-        partenze.push("Roma"); // devo aggiungere anche Roma perchè essendo l'arrivo non risulta nelle città di Partenza, ma se uno vuole il percorso al contrario deve anche poter selezionare Roma come città
-
-        res.status(200).json({
-            status: 200,
-            message: 'Partenze recuperate con successo',
-            data: partenze 
-        });
-    } catch (err) {
-        res.status(500).json({
-            status: 500,
-            message: 'Errore interno del server',
-            details: err
-        });
-    }
-}*/
-
-
 export async function getTappeViaggio(req: Request, res: Response): Promise<void> {
     try {
         const idViaggio = req.params.idViaggio;
@@ -159,7 +126,7 @@ export async function getLuoghiViaggio(req: Request, res: Response) {
                 .from('luoghi')
                 .select('id, nome')
                 .gte('id', dataViaggio[0].idTappaPartenza)
-                .lte('id', dataViaggio[0].idTappaArrivo + 1) // devo sommare 1 perchè ogni tappa x è composta dai luoghi x - x+1
+                .lte('id', dataViaggio[0].idTappaArrivo + 1) // devo sommare 1 perchÃ¨ ogni tappa x Ã¨ composta dai luoghi x - x+1
                 .order('id', { ascending: true });
             dataLuogo = data; errorLuogo = error;
         } else {
@@ -237,3 +204,4 @@ export async function getInfoStatsViaggi(req: Request, res: Response): Promise<v
         });
     }
 }
+
