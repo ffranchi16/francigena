@@ -1,0 +1,88 @@
+<div class="page-container">
+    <nav> <navbar [username]="username" active="profile"></navbar> </nav>
+
+    <div id="contact" class="content-section" [class]="userInfo.type">
+        <h3>Informazioni account</h3>
+        @if(userInfo.type=='pellegrino'){ <h1>Pellegrino</h1> }
+        @else { <h1>Gestore di strutture</h1> }
+
+        <div class="contact-info">
+            <p>
+                <strong>Cognome nome:</strong>
+                <span class="value">{{userInfo.cognome}} {{userInfo.nome}}</span>
+            </p>
+            <p>
+                <strong>Telefono:</strong>
+                <span class="value">{{userInfo.telefono}}</span>
+            </p>
+            <p>
+                <strong>Email:</strong>
+                <span class="value">{{userInfo.email}}</span>
+            </p>
+        </div>
+
+        <div class="stats-section">
+            @if(userInfo.type === 'pellegrino') {
+                <h4>Statistiche generali</h4>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-number">{{statsPellegrino.totViaggi}}</span>
+                        <span class="stat-label">Numero di viaggi organizzati</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">{{statsPellegrino.totKm | number: '1.2-2'}}</span>
+                        <span class="stat-label">Totale km</span>
+                    </div>
+                </div>
+                <br>
+                @if(statsPellegrino.viaggioAttivo) {
+                    <h4>Statistiche viaggio attivo</h4>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-number">{{statsPellegrino.luogoPartenza}} <br>-<br> {{statsPellegrino.luogoArrivo}}</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">{{statsPellegrino.dataPartenza | date:'dd-MM-yyyy'}} <br>-<br> {{statsPellegrino.dataArrivo | date:'dd-MM-yyyy'}}</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">{{statsPellegrino.oreAttivo}}</span>
+                            <span class="stat-label">Ore di cammino totali</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">{{statsPellegrino.kmAttivo | number: '1.2-2'}}</span>
+                            <span class="stat-label">Km totali</span>
+                        </div>
+                        <div class="stat-item-full">
+                            <button class="btn btn-delete" (click)="eliminaViaggio()">Elimina viaggio</button>
+                        </div>
+                    </div>
+                }
+            } @else {
+                <h4>Le tue statistiche</h4>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-number">{{statsGestore.nStrutture}}</span>
+                        <span class="stat-label">Strutture</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">{{statsGestore.nPostiLetto}}</span>
+                        <span class="stat-label">Posti letto</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">{{statsGestore.totPrenotazioni}}</span>
+                        <span class="stat-label">Prenotazioni totali</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">{{statsGestore.futurePrenotazioni}}</span>
+                        <span class="stat-label">Prenotazioni future</span>
+                    </div>
+                </div>
+            }
+        </div>
+        
+        <div class="actions-section">
+            <button class="btn btn-logout" (click)="logout()">Logout</button>
+            <button class="btn btn-danger" (click)="eliminaAccount()">Cancella account</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="navbar-container">
+    <div class="title">Benvenuto {{this.username}}</div>
+    <ul class="nav-links">
+        @if(tipo == 'pellegrino') {
+            <li>
+                <i class="fas fa-1x mb-1 fa-map"></i>
+                <a [class.active]="isActive('mappa')" (click)="navigateToMappa()">Mappa</a>
+            </li>
+            <li>
+                <i class="fas fa-1x mb-1 fa-list"></i>
+                <a [class.active]="isActive('checklist')" (click)="navigateToChecklist()">Checklist</a>
+            </li>
+        } @else if(tipo == 'gestore') {
+            <li>
+                <i class="fas fa-1x mb-1 fa-calendar"></i>
+                <a [class.active]="isActive('calendar')" (click)="navigateToCalendar()">Calendar</a>
+            </li>
+            <li>
+                <i class="fas fa-1x mb-1 fa-home"></i>
+                <a [class.active]="isActive('modify')" (click)="navigateToModify()">Modifica strutture</a>
+            </li>
+        }
+        <li>
+            <i class="fas fa-1x mb-1 fa-user"></i>
+            <a [class.active]="isActive('profile')" (click)="navigateToProfilo()">Profilo</a>
+        </li>
+        
+    </ul>
+</div> 

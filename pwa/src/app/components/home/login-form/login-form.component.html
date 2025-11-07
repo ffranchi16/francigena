@@ -1,0 +1,20 @@
+@if(showLogin) {
+  <div class="form-overlay" (keyup.esc)="closeLogin()" (keyup.enter)="onLogin()">
+    <form #form="ngForm" class="form-container" (ngSubmit)="onLogin()">
+      <h1>Login {{this.loginType}}</h1>
+
+      <label><b>Email</b></label>
+      <input type="email" name="email" placeholder="Inserisci email" [(ngModel)]="credenziali.email" required>
+      
+      <label><b>Password</b></label>
+      <input type="password" name="password" placeholder="Inserisci password" [(ngModel)]="credenziali.password" required>
+      
+      <button type="submit" class="btn submit">Login</button>
+
+      <p class="error-message">{{error}}</p>
+      <div class="divider"></div>
+      
+      <button type="button" class="btn cancel" (click)="closeLogin()">Close</button>
+    </form>
+  </div> 
+}

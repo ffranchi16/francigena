@@ -1,0 +1,19 @@
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-10">
+      <div class="row g-4">
+        <!-- Card pellegrino -->
+          <div class="col-md-6">
+            <app-card card="pellegrino" (loginRequest)="loginForm.openLogin($event)" (registerRequest)="registerForm.openRegister($event)"></app-card>
+          </div>   
+        <!-- Card Struttura -->
+          <div class="col-md-6">
+            <app-card card="struttura" (loginRequest)="loginForm.openLogin($event)" (registerRequest)="registerForm.openRegister($event)"></app-card>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <login-form #loginForm></login-form>
+  <register-form #registerForm></register-form>
+</div> 

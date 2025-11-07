@@ -1,0 +1,43 @@
+<div class="page-container">
+    <nav>
+        <navbar [username]="username" active="checklist"></navbar>
+    </nav>
+
+    <section class="textured-bg">
+        <div class="checklist-container">
+            <h3>Checklist per organizzare al meglio il viaggio</h3>
+            @for(c of checkList; track c.idCategoria) {
+                <h5>{{c.nome}}</h5>
+                <ul>
+                    @for(l of c.item; track l.idItem) {
+                        <li (click)="toggleItem(l)" [class.checked]="l.checked">
+                            <input type="checkbox" [(ngModel)]="l.checked" class="checkbox">
+                            <span class="check-item-text">{{ l.testo }}</span>
+                            <button class="delete-btn" (click)="removeItem(c, l.idItem)" (click)="$event.stopPropagation()">&times;</button>
+                        </li>
+                    }
+                    <div class="add-item-container">
+                        <input 
+                            type="text" 
+                            [(ngModel)]="c.inputNewItem"
+                            (keyup.enter)="addItem(c)"
+                            placeholder="Aggiungi un nuovo elemento..." 
+                            class="add-input"
+                        />
+                        <button class="add-btn item" (click)="addItem(c)">Aggiungi</button>
+                    </div>
+                </ul>                
+            }
+            <div class="add-category-container">
+                <input 
+                    type="text" 
+                    [(ngModel)]="inputNewCat"
+                    (keyup.enter)="addCategory()"
+                    placeholder="Aggiungi una nuova categoria..." 
+                    class="add-input"
+                />
+                <button class="add-btn cat" (click)="addCategory()">Aggiungi</button>
+            </div>
+        </div>
+    </section>
+</div>

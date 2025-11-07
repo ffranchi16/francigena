@@ -1,0 +1,115 @@
+@if(visibility) {
+  <div class="form-overlay" *ngIf="visibility">
+    <div class="form-container">
+      <div class="form-header">
+        <h3>Modifica il viaggio</h3>
+        <h6>Il tuo viaggio attuale è il seguente:</h6>
+        <div class="viaggio-info">
+          <p>
+            <i class="fa fa-map-pin"></i><strong>{{luogoPartenza}}</strong> <i class="fa fa-long-arrow-right"></i> <strong>{{luogoArrivo}}</strong><br/>
+            <i class="fa fa-map"></i> Dal <strong>{{viaggioAttivo?.dataPartenza | date:'dd/MM/yyyy'}}</strong> 
+            al <strong>{{viaggioAttivo?.dataArrivo | date:'dd/MM/yyyy'}}</strong><br/>
+            Camminando per un massimo di <strong>{{viaggioAttivo?.maxOre}} ore</strong> al giorno
+          </p>
+        </div>
+      </div>
+
+      <!-- Scelta sul tipo di modifica -->
+      <div class="radio-group">
+        <label class="radio-option">
+          <input type="radio" name="modificaType" value="date" 
+                [(ngModel)]="tipo" (change)="onTipoModificaChange('date')">
+          <span class="radio-custom"></span>
+          <span class="radio-label"><i class="fa fa-map"></i> Modifica Date</span>
+        </label>
+        
+        <label class="radio-option">
+          <input type="radio" name="modificaType" value="tappe" 
+                [(ngModel)]="tipo" (change)="onTipoModificaChange('tappe')">
+          <span class="radio-custom"></span>
+          <span class="radio-label"><i class="fa fa-map-pin"></i> Modifica Tappe</span>
+        </label>
+      </div>
+
+      @if(tipo === 'date') {
+        <div class="modifica-section">
+          <div class="section-description">
+            <p>Per andare da {{luogoPartenza}} a {{luogoArrivo}} hai bisogno di minimo {{giorniMin}} giorni e massimo {{giorniMax}} giorni se sosti in ogni tappa</p>
+          </div>
+          
+          <div class="input-group">
+            <div class="input-field">
+              <label for="dataPartenza">Data di Partenza</label>
+              <input 
+                type="date" 
+                id="dataPartenza" 
+                [(ngModel)]="dataPartenza" 
+                (change)="onDataPartenzaChange()"
+                class="form-input"
+                [min]="dataOggi"
+              >
+            </div>
+            
+            <div class="input-field">
+              <label for="dataArrivo">Data di Arrivo</label>
+              <input 
+                type="date" 
+                id="dataArrivo" 
+                [(ngModel)]="dataArrivo"
+                class="form-input"
+                [min]="dataMin"
+                [max]="dataMax"
+              >
+            </div>
+          </div>
+        </div>
+      }
+      
+
+      @if(tipo === 'tappe') {
+        <div class="modifica-section">
+          <div class="section-description">
+            <p>Scegli da dove partire o dove arrivare per un cammino di {{giorniViaggio}} giorni</p>
+          </div>
+          
+          <div class="input-group">
+            <div class="input-field">
+              <label class="radio-option">
+                <input type="radio" name="radioTappe" value="tappaA" [(ngModel)]="radioTappe">
+                <span class="radio-custom"></span>
+                <span class="radio-label">Partire da {{luogoPartenza}} e arrivare a ...
+                  <select [(ngModel)]="luogoArrivoSelezionato" class="arrivo-select" [disabled]="radioTappe !== 'tappaA'">
+                    <option value="">Seleziona destinazione</option>
+                    @for(luogo of luoghiDisponibiliPerArrivo; track luogo) { <option [value]="luogo">{{luogo}}</option> }
+                  </select>
+                </span>
+              </label>
+            </div>
+            
+            <div class="input-field">
+              <label class="radio-option">
+                <input type="radio" name="radioTappe" value="tappaP" [(ngModel)]="radioTappe">
+                <span class="radio-custom"></span>
+                <span class="radio-label">Partire da ... e arrivare a {{luogoArrivo}}
+                  <select [(ngModel)]="luogoPartenzaSelezionato" class="arrivo-select" [disabled]="radioTappe !== 'tappaP'">
+                    <option value="">Seleziona destinazione</option>
+                    @for(luogo of luoghiDisponibiliPerPartenza; track luogo) { <option [value]="luogo">{{luogo}}</option> }
+                  </select>
+                </span>
+              </label>
+            </div>
+          </div>
+        </div>
+      }
+      
+
+      <!-- Pulsanti Azione -->
+      <div class="form-actions">
+        <button class="btn btn-secondary" (click)="onAnnulla()">Annulla</button>
+        <button class="btn btn-primary" (click)="onSalva()" [disabled]="!isFormValido" [class.btn-disabled]="!isFormValido">Salva Modifiche</button>
+      </div>
+      <p clss="info">*se modifichi il viaggio le prenotazioni che hai effettuato e non corrispondono verranno eliminate</p>
+      <p class="error">{{error}}</p>
+    </div>
+  </div>
+}

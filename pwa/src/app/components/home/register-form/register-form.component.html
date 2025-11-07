@@ -1,0 +1,35 @@
+@if(showRegister) {
+  <div class="form-overlay" (keyup.esc)="closeRegister()" (keyup.enter)="onRegister()">
+    <form #form="ngForm" class="form-container" (ngSubmit)="onRegister()">
+      <h1>Registrazione {{this.registerType}}</h1>
+
+      <label><b>Nome</b></label>
+      <input type="text" name="nome" placeholder="Inserisci nome" [(ngModel)]="registerData.nome" required>
+      
+      <label><b>Cognome</b></label>
+      <input type="text" name="cognome" placeholder="Inserisci cognome" [(ngModel)]="registerData.cognome" required>
+      
+      <label><b>username</b></label>
+      <input type="text" name="username" placeholder="Inserisci username" [(ngModel)]="registerData.username" required>
+      
+      <label><b>Email</b></label>
+      <input type="email" name="email" placeholder="Inserisci email" [(ngModel)]="registerData.email" required>
+      
+      <label><b>Telefono</b></label>
+      <input type="tel" name="telefono" placeholder="Inserisci telefono" [(ngModel)]="registerData.telefono" required>
+      
+      <label><b>Password</b></label>
+      <input type="password" name="password" placeholder="Inserisci password" [(ngModel)]="registerData.password" required>
+      
+      <label><b>Conferma Password</b></label>
+      <input type="password" name="passwordC" placeholder="Inserisci password" [(ngModel)]="registerData.passwordC" required>
+      
+      <button type="submit" class="btn submit">Registrati</button>
+
+      <p class="error-message">{{error}}</p>
+      <div class="divider"></div>
+
+      <button type="button" class="btn cancel" (click)="closeRegister()">Close</button>
+    </form>
+  </div>
+}

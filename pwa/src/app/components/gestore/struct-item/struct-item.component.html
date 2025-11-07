@@ -1,0 +1,8 @@
+<div class="service-item">
+  <img src="{{publicUrl}}" alt={{struct.nome}}> 
+  <h3>{{struct.nome}}</h3>
+  <p>Indirizzo: {{struct.via}}. Civico: n.{{struct.civico}}</p>
+  <p><i class="fas fa-1x mb-1 fa-bed"></i>x{{struct.nLetti}}</p>
+  @if(struct.altreInfo) {<p>Altre info: {{struct.altreInfo}}</p>}
+  <a class="cta-button secondary" (click)="openForm()">Modifica</a>
+</div>

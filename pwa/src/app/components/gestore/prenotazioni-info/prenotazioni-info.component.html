@@ -1,0 +1,31 @@
+@if(showInfo) {
+  <div class="modal">
+    <section class="form-container modal-content">
+      <span class="close" (click)="closeInfo()">&times;</span>
+
+      <h2>Prenotazioni per il giorno: {{ this.data | date : "dd-MM-yyyy" }}</h2>
+
+      <div class="popup-content">
+        <p>
+          <span class="infoTitle">Letti disponibili: </span
+          ><strong>{{ this.numLettiDisponibili }}</strong>
+          <br />
+          <span class="infoTitle">Letti occupati: </span
+          ><strong>{{ this.info.numLettiOccuppati }}</strong>
+        </p>
+
+        <div class="prenotazioni-list">
+          @for(prenotazione of this.info.prenotazioni; track prenotazione.idStruttura + '-' + prenotazione.usernamePellegrino) { 
+            @let userInfo = getUsersInfo(prenotazione.usernamePellegrino);
+            <i class="fa fa-bed"></i>
+            <strong> {{ userInfo?.cognome }} {{ userInfo?.nome }} </strong>
+            <span id="infoTel">tel. {{ userInfo?.telefono }}</span>
+            <span id="infoNumLetti"> x {{ prenotazione.numLetti }}</span>
+            <br />
+          }
+          <br />
+        </div>
+      </div>
+    </section>
+  </div>
+}

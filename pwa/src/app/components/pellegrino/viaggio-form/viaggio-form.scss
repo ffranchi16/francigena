@@ -1,0 +1,163 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  position: relative;
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+
+  .btn-close {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: #666;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 1000;
+  
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.1);
+      color: #333;
+      transform: scale(1.1);
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+
+  #stepperValue {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.2rem;
+  
+    .step-icon {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+      padding: 10px;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+      color: #ccc; 
+      
+      i {
+        font-size: 24px;
+      }
+    }
+
+    .step-icon.active {
+      color: #007bff;
+      background-color: rgba(0, 123, 255, 0.1);
+    }
+ 
+    .separator {
+      color: #ccc;
+      font-weight: bold;
+      margin: 0 15px;
+    }    
+  }
+
+  .text-container {
+    display: block;
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid #dddddd;
+      border-radius: 4px;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      transition: 0.3s;
+    }
+
+    input:focus, select:focus {
+      border-color: #3d91f5;
+      outline: none;
+      box-shadow: 0 0 4px rgba(76, 0, 255, 0.5);
+    }
+
+  }
+
+  .hide {
+    display: none;
+  }
+
+  
+  .btns {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+
+    .btn {
+      width:40%;
+      background: #007bff;
+      color: #ffffff;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: bold;
+      transition: 0.3 ease;
+      padding: 10px 20px;
+    
+      &:hover {
+        background: #0056b3;
+      }
+
+      &:disabled {
+        background-color: #dddddd;
+        color: #6c757d;
+        cursor: not-allowed;
+        border: 1px solid #ced4da;
+      }
+
+      i {
+        margin: 0 5px;
+      }
+    }
+
+    #submit {
+      background: rgb(0, 201, 0);
+
+      &:hover {
+        background: green;
+      }
+    }
+  }
+
+  #error-message {
+    color: #e92828;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    text-align: center;
+  }
+
+  
+}

@@ -1,0 +1,82 @@
+@use "sass:color";
+
+.form-group {
+  position: relative;
+
+  .suggestions {
+    position: absolute;
+    top: calc(100% + 5px); // posiziona la lista sotto l'input
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border: 1px solid #ddd;
+    max-height: 250px;
+    overflow-y: auto;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    animation: fadeIn 0.2s ease-in-out;
+
+    li {
+      padding: 10px 14px;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+      font-size: 0.95rem;
+
+      &:hover {
+        background-color: #f0f6ff;
+        transform: translateX(3px);
+      }
+    }
+
+    li + li {
+      border-top: 1px solid #eee;
+    }
+  }
+
+  .disabled {
+    opacity: 0.6;
+    cursor: not-allowed !important;
+  }
+}
+
+.btn-form-confirm {
+  display: block;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.btn-form-cancel {
+  display: block;
+  width: 100%;
+  margin-top: 1rem;
+  background-color: red;
+  &:hover {
+    background-color: color.adjust(red, $lightness: -10%);
+  }
+}
+
+.btn-form-close {
+  display: block;
+  width: 100%;
+  margin-top: 1rem;
+  background-color: rgba(255, 166, 0, 1);
+  &:hover {
+    background-color: color.adjust(rgb(255, 166, 0, 1), $lightness: -10%);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+

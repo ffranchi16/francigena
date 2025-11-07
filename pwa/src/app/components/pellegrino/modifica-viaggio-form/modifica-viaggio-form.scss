@@ -1,0 +1,359 @@
+.form-container {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin: 0 auto;
+
+
+  .radio-group {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid #e9ecef;
+    padding-bottom: 20px;
+  }
+
+  .radio-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    padding: 12px 16px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    flex: 1;
+    border: 2px solid transparent;
+
+    &:hover {
+      background: #f8f9fa;
+    }
+
+    input[type="radio"] {
+      display: none;
+      
+      &:checked + .radio-custom {
+        border-color: #007bff;
+        background: #007bff;
+        
+        &::after {
+          content: '';
+          width: 8px;
+          height: 8px;
+          background: white;
+          border-radius: 50%;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+      
+      &:checked ~ .radio-label {
+        color: #007bff;
+        font-weight: 600;
+      }
+      
+      &:checked ~ .radio-label {
+        .radio-option {
+          border-color: #007bff;
+          background: #f8faff;
+        }
+      }
+    }
+
+    .radio-custom {
+      width: 18px;
+      height: 18px;
+      border: 2px solid #dee2e6;
+      border-radius: 50%;
+      position: relative;
+      transition: all 0.3s ease;
+      flex-shrink: 0;
+    }
+
+    .radio-label {
+      font-weight: 500;
+      color: #495057;
+      transition: color 0.3s ease;
+    }
+  }
+
+  .modifica-section {
+    animation: fadeIn 0.3s ease-in-out;
+
+    .section-description {
+      background: #f8f9fa;
+      padding: 16px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      border-left: 4px solid #007bff;
+      
+      p {
+        margin: 0;
+        color: #495057;
+        line-height: 1.5;
+        font-size: 0.95em;
+      }
+    }
+
+    .input-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+  }
+
+  .input-field {
+    display: flex;
+    flex-direction: column;
+    
+    label {
+      font-weight: 600;
+      color: #2c3e50;
+      margin-bottom: 8px;
+      font-size: 0.9em;
+    }
+  }
+
+  .form-input, .form-select {
+    padding: 12px;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    background: white;
+    
+    &:focus {
+      outline: none;
+      border-color: #007bff;
+      box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+    }
+    
+    &:hover {
+      border-color: #adb5bd;
+    }
+  }
+
+  .form-select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236c757d' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 16px;
+    padding-right: 40px;
+  }
+
+  .form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid #e9ecef;
+  }
+
+  .btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 120px;
+    
+    &.btn-secondary {
+      background: #6c757d;
+      color: white;
+      
+      &:hover {
+        background: #5a6268;
+        transform: translateY(-1px);
+      }
+    }
+    
+    &.btn-primary {
+      background: #007bff;
+      color: white;
+      
+      &:hover {
+        background: #0056b3;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+      }
+      
+      &:active {
+        transform: translateY(0);
+      }
+    }
+  }
+
+  .form-input:disabled,
+  .form-select:disabled {
+    background: #f8f9fa;
+    color: #6c757d;
+    cursor: not-allowed;
+    
+    &:hover {
+      border-color: #e9ecef;
+    }
+  }
+
+  .radio-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    padding: 12px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+
+    &:hover {
+      background: #f8f9fa;
+    }
+
+    input[type="radio"]:checked + .radio-custom + .radio-label {
+      .arrivo-select {
+        border-color: #007bff;
+        background: #f8faff;
+      }
+    }
+  }
+
+  .radio-label {
+    gap: 8px;
+    font-weight: 500;
+    color: #495057;
+  }
+
+  .arrivo-select {
+    padding: 6px 10px;
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    font-size: 14px;
+    background: white;
+    transition: all 0.3s ease;
+    min-width: 150px;
+    
+    &:focus {
+      outline: none;
+      border-color: #007bff;
+      box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.1);
+    }
+    
+    &:disabled {
+      background: #f8f9fa;
+      color: #6c757d;
+      cursor: not-allowed;
+      border-color: #e9ecef;
+    }
+  }
+
+  input[type="radio"]:checked ~ .radio-label {
+    color: #007bff;
+    font-weight: 600;
+    
+    .arrivo-select:not(:disabled) {
+      border-color: #007bff;
+    }
+  }
+
+
+
+  .form-header {
+    background: #2c3e50;
+    color: white;
+    padding: 20px;
+    border-radius: 10px 10px 0 0;
+    border-bottom: 3px solid #3498db;
+  }
+
+  .form-header h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.6em;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .form-header h6 {
+    margin: 0 0 12px 0;
+    font-size: 0.9em;
+    opacity: 0.8;
+    font-weight: 400;
+  }
+
+  .viaggio-info {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 0.9em;
+    
+    p {
+      margin: 0;
+      line-height: 1.5;
+    }
+    
+    strong {
+      color: #3498db;
+    }
+  }
+
+  .fa-map-pin {
+    color: rgb(253, 44, 44)
+  }
+
+  .fa-map {
+    color: green;
+  }
+
+  .error {
+    color: red;
+  }
+
+  .info {
+    color: gray;
+    font-size: 0.8rem;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .form-container {
+      padding: 16px;
+      margin: 16px;
+    }
+    
+    .radio-group {
+      flex-direction: column;
+      gap: 8px;
+    }
+    
+    .input-group {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    
+    .form-actions {
+      flex-direction: column-reverse;
+      
+      .btn {
+        width: 100%;
+      }
+    }
+  }
+}

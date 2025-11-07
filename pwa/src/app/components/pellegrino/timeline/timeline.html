@@ -1,0 +1,136 @@
+<div class="timeline-container">
+  <div class="timeline-header">
+    <h2 class="timeline-title">Tappe del viaggio</h2>
+  </div>
+
+  <div class="timeline-content">
+    @if(error.color) {
+      <div id="viaggio-error" [ngClass]="error.color">
+        <i id="error-icon" class="fa fa-exclamation-triangle" (click)="openModificaViaggio()"></i>
+        <p>{{error.message}}</p>
+      </div>
+    }
+    
+    <div class="timeline">
+      @for(luogo of listaLuoghi; track $index) {
+        <!-- Elemento luogo -->
+        <div class="timeline-item city-item">
+          <div class="timeline-marker">
+            <div class="circle">{{ $index+1 }}</div> <!-- Marker con indice del luogo -->
+          </div>
+          <div class="timeline-content-item" (click)="clickLuogo($index+1)">
+            <div class="city-name">{{ luogo?.nome }}</div>
+          </div>
+          
+          @if($index!=0 && listaLuoghi.length>0) {
+            <div class="timeline-prenotazione">
+                <i class="fa fa-home fa-xl" [ngClass]="this.mappaPrenotazioni.get(luogo.id)?.color" (click)="clickPopup(luogo)"> </i>
+                @if(miniPopup && luogoSelezionato == listaLuoghi[$index]) {
+                  <div class="mini-popup">
+                    <div class="mini-popup-message">
+                      <div class="mini-popup-header">
+                        <button class="mini-popup-close" (click)="chiudiPopup()">&times;</button>
+                      </div>
+                      <div class="mini-popup-content">
+                        @if(this.mappaPrenotazioni.get(luogo.id)?.color == 'gray') {
+                          @if(tappeViaggio[$index-1].dataPercorrenza == null) {
+                            <p>Città non inclusa nel cammino</p>
+                          } @else {
+                            <p>Città di passaggio, non è necessario pernottamento</p>
+                          }
+                        } @else if(this.mappaPrenotazioni.get(luogo.id)?.color == 'red') {
+                          <p>Non ci sono ancora prenotazioni</p>
+                          <button class="btn-prenota" (click)="zoomStruct($index+1)">Prenota</button>  
+                        }                  
+                      </div>
+                    </div>
+                    <div class="mini-popup-arrow"></div>
+                  </div>
+                }
+                
+            </div>
+          } 
+        </div>
+
+        @if($index != listaLuoghi.length-1) {
+          <!-- Elemento Tappa -->
+          <div class="timeline-item info-item">
+            <div class="timeline-content-item">
+              <div class="tappa-info">
+                <div class="info-line">
+                  <span class="label">Distanza:</span>
+                  <span class="value">{{ tappeViaggio[$index].km | number: '1.2-2'}} km</span>
+                </div>
+                <div class="info-line">
+                  <span class="label">Durata:</span>
+                  <span class="value">{{ tappeViaggio[$index].durata | number: '1.2-2'}} ore</span>
+                </div>
+                <div class="info-line">
+                  <span class="label">Data:</span>
+                  <span class="value">{{ tappeViaggio[$index].dataPercorrenza | date: 'dd-MM-yyyy' }}</span> <!-- formattazione della data dal formato americano al formato europeo -->
+                </div>
+              </div>
+            </div>
+          </div>
+        }
+      }
+    </div>
+  </div>
+
+  <!-- Popup per info prenotazione già effettuata -->
+  @if(infoPopup) {
+    <div class="popup-overlay">
+      <div class="popup-content">
+        <div class="popup-header">
+          <div>
+            <h3>Prenotazione effettuata per {{prenotazioneSelezionata.numLetti}} persone</h3>
+            <h6>Per il giorno {{prenotazioneSelezionata.dataAlloggio | date:'dd-MM-yyyy'}}</h6>
+          </div>
+          <button class="popup-close" (click)="chiudiPopup()">&times;</button>
+        </div>
+          
+        <div class="popup-body">
+          <div class="struttura-image"> <img src="{{publicUrl}}" alt={{prenotazioneSelezionata.struttura.nome}} class="structure-photo"> </div>
+          <div class="struttura-info">
+            <h4>{{prenotazioneSelezionata.struttura?.nome}}</h4>
+            <div class="info-section">
+              <h5>Informazioni Struttura</h5>
+              <div class="info-grid">
+                <div class="info-item">
+                  <span class="label">Proprietario:</span>
+                  <span class="value">{{userInfo.cognome}} {{userInfo.nome}}</span>
+                </div>
+                <div class="info-item">
+                  <span class="label">Telefono:</span>
+                  <span class="value">{{userInfo.telefono}}</span>
+                </div>
+                <div class="info-item">
+                  <span class="label">Email:</span>
+                  <span class="value">{{userInfo.email}}</span>
+                </div>
+                <div class="info-item">
+                  <span class="label">Indirizzo:</span>
+                  <span class="value">{{prenotazioneSelezionata.struttura?.via}}</span>
+                </div>
+                <div class="info-item">
+                  <span class="label">Civico</span>
+                  <span class="value">{{prenotazioneSelezionata.struttura?.civico}}</span>
+                </div>
+              </div>
+            </div>
+            
+            @if(prenotazioneSelezionata.struttura?.altreInfo) {
+              <div class="info-section">
+                <h5>Altre Informazioni</h5>
+                <p class="altre-info">{{prenotazioneSelezionata.struttura?.altreInfo}}</p>
+              </div>
+            }
+          </div>
+        </div>
+        
+        <div class="popup-footer"> <button class="btn btn-cancel" (click)="cancellaPrenotazione()">Cancella prenotazione</button> </div>
+      </div>
+    </div>
+  }
+  
+</div>

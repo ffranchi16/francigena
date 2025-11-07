@@ -1,0 +1,96 @@
+@if(showForm) {
+    <div class="form-overlay">
+        <section class="textured-bg form-container">
+            <div class="container">
+                <button class="btn-close" (click)="closeForm()">&times;</button>
+                <!-- Form a più step -->
+                <div id="stepperValue">
+                    <span class="step-icon" [class.active]="currentStep === 1"> <!-- Step inserimento date -->
+                        <i class="fas fa-calendar"></i>
+                    </span>
+                    <span class="separator">-</span>
+                    <span class="step-icon" [class.active]="currentStep === 2"> <!-- Step inserimento tappe -->
+                        <i class="fas fa-map-marker-alt"></i>
+                    </span> 
+                    <span class="separator">-</span> 
+                    <span class="step-icon" [class.active]="currentStep === 3"> <!-- Step inserimento numero persone + maxOre di cammino -->
+                        <i class="fas fa-users"></i>
+                    </span> 
+                </div>
+
+                <div id="multistep-form-container">
+                    <div class="text-container" [class.hide]="currentStep != 1"> <!-- Step inserimento date -->
+                        <label for="dataPartenza">Data di partenza</label>
+                        <input type="date" class="input" id="dataPartenza"/>
+
+                        <label for="dataArrivo">Data di arrivo</label>
+                        <input type="date" class="input" id="dataArrivo"/>
+                    </div>
+                    <div class="text-container" [class.hide]="currentStep != 2"> <!-- Step inserimento tappe -->
+                        <label for="tappaPartenza">Tappa di partenza</label>
+                        <select 
+                            id="tappaPartenza"
+                            class="input"
+                            [(ngModel)]="tappaPartenza"
+                            name="tappaPartenza"
+                            required
+                        >
+                            <option value="" disabled selected>Seleziona</option>
+                            @for(luogo of listaLuoghi; track luogo.id) { <option [value]="luogo.nome"> {{ luogo.nome }} </option>}
+                            
+                        </select>
+                    
+                        <label for="tappaArrivo">Tappa di arrivo</label>
+                        <select 
+                            id="tappaArrivo"
+                            class="input"
+                            [(ngModel)]="tappaArrivo"
+                            name="tappaArrivo"
+                            required
+                        >
+                            <option value="" disabled selected>Seleziona</option>
+                            @for(luogo of listaLuoghi; track luogo.id) { <option [value]="luogo.nome"> {{ luogo.nome }} </option>}
+                        </select>
+                    </div>
+                    <div class="text-container" [class.hide]="currentStep != 3"> <!-- Step inserimento numero persone + maxOre di cammino -->
+                        <label for="nPersone">Numero di persone</label>
+                        <input
+                            type="number"
+                            class="input"
+                            id="nPersone"
+                            [defaultValue]="1"
+                            [min]="1"
+                        />
+
+                        <label for="maxOre">Ore di cammino massimo giornaliere</label>
+                        <input
+                            type="number"
+                            class="input"
+                            id="maxOre"
+                            [defaultValue]="10"
+                            [min]="1"
+                        />
+                    </div>
+
+                    <div class="btns">
+                        <button class="btn" id="previous" 
+                                [disabled]="currentStep === 1"
+                                (click)="clickPrev()"
+                        >
+                            <i class="fas fa-arrow-left"></i>
+                        </button>
+
+                        <!-- Il bottone "successivo" viene visualizzato solo se non è l'ultimo step-->
+                        @if (currentStep < this.textContainer.length) {
+                            <button class="btn" id="next" (click)="clickNext()"><i class="fas fa-arrow-right"></i></button>
+                        }
+                        @if (currentStep === this.textContainer.length) {
+                            <button class="btn" id="submit" (click)="clickSubmit()">Conferma</button>
+                        }
+                    </div>
+                </div>
+                <p id="error-message">{{this.errorMessage}}</p>
+            </div>
+        </section>
+    </div>
+}

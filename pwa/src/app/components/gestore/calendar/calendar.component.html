@@ -1,0 +1,17 @@
+<div class="calendar-container">
+    <div class="calendar-wrapper">
+        <full-calendar id="calendar" [options]="calendarOptions"></full-calendar>
+    </div>
+    <div class="calendar-legend">
+        <h3>Legenda Strutture</h3>
+        <ul class="legend-items" >
+            @for(struttura of this.strutture.values() ; track struttura.id) {
+                <legend-item 
+                    [name]="struttura.nome"
+                    [color]="struttura.colore">
+                </legend-item>
+            }
+        </ul>
+    </div>
+</div>
+<prenotazioni-info #prenotazioniInfo></prenotazioni-info> 

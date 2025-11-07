@@ -1,0 +1,63 @@
+.modal {
+  position: fixed; 
+  z-index: 2000;
+  padding-top: 5%;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  box-sizing: border-box;
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 50px 20px 20px 20px;
+    border: 1px solid #888;
+    width: 80%;
+    position: relative;
+    box-sizing: border-box;
+
+    .close {
+      position: absolute;
+      right: 20px;
+      top: 15px;
+      color: #aaaaaa;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    
+
+      &:hover, &:focus {
+        color: #000;
+        text-decoration: none;
+      }
+    }
+
+    .infoTitle {
+      font-size: 16px;
+      font-weight: bold;
+      color: #556b2f;
+    }
+
+    #infoTel {
+      margin-left: 3px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    #infoNumLetti {
+      margin-left: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #ff0000;
+    }
+  }
+}

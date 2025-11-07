@@ -1,0 +1,22 @@
+<div class="page-container">
+    <nav> 
+        <navbar [username]="username" active="modify"></navbar> 
+    </nav>
+
+    <div class="content-section textured-bg struct">
+        @if (strutture.length != 0) {
+            <h2>Le tue strutture:</h2>
+        } @else {
+            <h2>Non hai ancora strutture</h2>
+            <p>Clicca sul pulsante per aggiungere la tua prima struttura</p>
+        }
+        
+        <div class="service-grid">
+            @for (struct of strutture; track struct.id) {
+                <struct-item [struct]="struct" (openFormRequest)="structForm.openModifyForm($event)"></struct-item>
+            }
+        </div>
+        <a class="cta-button secondary" (click)="openAddStruct()">Aggiungi nuova struttura</a>
+    </div>
+    <struct-form #structForm (struttureAggiornate)="struttureAggiornate()"></struct-form>
+</div>

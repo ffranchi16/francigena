@@ -1,0 +1,21 @@
+<div class="map-container">
+  <div class="map-frame">
+    <div id="map"></div>
+
+    <!-- Overlay di disabilitazione -->
+    <div class="map-overlay" id="mapOverlay"></div>
+     
+    <!-- Pulsante centrale -->
+    <button class="overlay-button" id="overlayButton" (click)="openViaggioForm()">Organizza il viaggio</button>
+
+    <prenotazione-popup #prenotazionePopup [tappeViaggio]="tappeViaggio" [viaggioAttivo]="viaggioAttivo" [mappaPrenotazioni]="mappaPrenotazioni" (modificaMyPrenotazioni)="modificaMyPrenotazioni()"></prenotazione-popup>
+  </div>
+
+  @if(this.viaggioAttivo) {
+    <div class="timeline">
+      <timeline [viaggioAttivo]="viaggioAttivo" [tappeViaggio]="tappeViaggio" [mappaPrenotazioni]="mappaPrenotazioni" [listaLuoghi]="luoghi" (zoomLuogo)="zoomLuogo($event)" (modificaViaggio)="modificaViaggio()" (eliminaPren)="eliminaPrenTimeline($event)"></timeline>
+    </div>    
+  }
+  <app-viaggio-form #formViaggio (formClosed)="onFormClosed($event)"></app-viaggio-form>
+  <modifica-viaggio-form #modificaViaggioForm [viaggioAttivo]="viaggioAttivo" [tappeViaggio]="tappeViaggio" [listaLuoghi]="luoghi" (aggiornaViaggio)="aggiornaViaggio($event)"></modifica-viaggio-form>
+</div> 

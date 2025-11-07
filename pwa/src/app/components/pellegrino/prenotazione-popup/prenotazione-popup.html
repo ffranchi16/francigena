@@ -1,0 +1,67 @@
+@if(visible) {
+    <div class="popup-overlay" (click)="onChiudi()">
+        <div class="popup-struttura" [class]="getPopupClass()" (click)="$event.stopPropagation()">
+            <button class="popup-close" (click)="onChiudi()">&times;</button>
+            <div class="popup-header">
+                <h3>{{struttura.nome}}</h3>
+                @switch (tipoPopup) {
+                    @case('prenotato') {<span class="badge prenotato">✅ Struttura già prenotata</span>}
+                    @case('cambio') {<span class="badge cambio">⚠️ Hai già una prenotazione per un'altra struttura</span>}
+                    @case('info') {<span class="badge info">ℹ️ Informazioni</span>}
+                    @default {<span class="badge classico">Prenotazione per {{viaggioAttivo?.nPersone}} persone per il giorno {{data | date: 'dd-MM-yyyy'}}</span>}
+                }
+            </div>
+
+            <div class="popup-details">
+                <p><strong>Proprietario:</strong> {{struttura.user.cognome}} {{struttura.user.nome}}, tel. {{struttura.user.telefono}}</p>
+                <p><strong>Indirizzo:</strong> {{struttura.via}}</p>
+                <p><strong>Civico</strong> {{struttura.civico}}</p>
+                @if(struttura.altreInfo){<p><strong>Altre informazioni:</strong> {{struttura.altreInfo}}</p>}
+                @if(tipoPopup != 'prenotato'){<p><strong>Letti disponibili:</strong> {{lettiDisponibili}} di {{struttura.nLetti}}</p>}
+            </div>
+
+            @if(tipoPopup == 'prenotato') {
+                <div class="prenotazione-attiva">
+                    <p><strong>Prenotazione attiva per il:</strong> {{data | date: 'dd-MM-yyyy'}} </p>
+                    <p><strong>Numero di posti letto prenotati</strong> {{viaggioAttivo?.nPersone}} </p>
+                </div>
+            }
+
+            @if(tipoPopup == 'cambio') {
+                <div class="avviso-sostituzione">
+                    <div class="checkbox-conferma">
+                        <input type="checkbox" id="conferma-sostituzione" [(ngModel)]="confermaCambioPrenotazione">
+                        <label for="conferma-sostituzione">
+                            <strong>Conferma sostituzione</strong><br>
+                            La prenotazione attiva verrà cancellata
+                        </label>
+                    </div>
+                </div>
+            }
+
+            <div class="popup-actions">
+                @switch(tipoPopup) {
+                    @case('prenotato') {<button class="btn btn-disabled" disabled>Prenotazione attiva</button>}
+                    @case('cambio') {
+                        @if(lettiDisponibili >= viaggioAttivo!.nPersone) {
+                            <button class="btn btn-warning" 
+                                [disabled]="!confermaCambioPrenotazione"
+                                (click)="sostituisciPrenotazione()">
+                                Prenota questa struttura
+                            </button>
+                        } @else {
+                            <button class="btn btn-disabled" disabled>Non ci sono abbastanza posti letto</button>
+                        }
+                    }
+                    @case('classico') {
+                        @if(lettiDisponibili >= viaggioAttivo!.nPersone) {
+                            <button class="btn btn-primary" (click)="prenotaStruttura()">Prenota questa struttura</button>
+                        } @else {
+                            <button class="btn btn-disabled" disabled>Non ci sono abbastanza posti letto</button>
+                        }
+                    }
+                }
+            </div>
+        </div>
+    </div>
+}

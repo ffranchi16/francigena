@@ -1,0 +1,446 @@
+@use "sass:color";
+
+:root {
+  --color-pellegrino: #3a5a78;
+  --color-struttura: #588157;
+  --primary-green: #8fbc8f; /* Dark Sea Green */
+  --secondary-green: #556b2f; /* Dark Olive Green */
+  --terracotta: #bc8f8f; /* Rosy Brown */
+  --cream: #f5f5dc; /* Beige */
+  --dark-text: #333;
+  --accent-gold: #daa520; /* Goldenrod */
+}
+
+body {
+  color: var(--dark-text); /* Dark grey text */
+  background-color: beige; /* Very light beige background */
+  font-family: "Lora", serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  a {
+    color: var(--primary-green);
+    text-decoration: none;
+    &:hover {
+      color: var(--secondary-green);
+    }
+  }
+
+  .content-section {
+    padding: 60px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .textured-bg {
+    background-color: var(--cream);
+  }
+
+  nav {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: rgba(248, 246, 242, 0.9);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px 15px;
+  }
+}
+
+// stile per i form
+.form-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 2000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+
+  h1 {
+    font-size: x-large;
+    margin-bottom: 20px;
+  }
+
+  .form-container {
+    width: 100%;
+    max-width: 350px;
+    max-height: 95vh;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    overflow-y: auto;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+  }
+
+  input,
+  select {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0 16px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: #f1f1f1;
+    box-sizing: border-box;
+    &:focus {
+      background-color: #ddd;
+      outline: none;
+    }
+
+    option {
+      background-color: white;
+    }
+  }
+
+  .error-message {
+    color: #e92828;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    text-align: center;
+  }
+
+  .btn {
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+  }
+
+  .btn.submit {
+    background-color: #04aa6d;
+    &:hover {
+      background-color: color.adjust(#04aa6d, $lightness: -10%);
+    }
+  }
+
+  .btn.cancel {
+    background-color: red;
+    &:hover {
+      background-color: color.adjust(red, $lightness: -10%);
+    }
+  }
+
+  /* Divisore */
+  .divider {
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+    color: #666;
+
+    &::before,
+    &::after {
+      content: "";
+      flex: 1;
+      border-bottom: 1px solid #ddd;
+    }
+  }
+}
+
+.struct {
+  max-width: 600px;
+  margin: 2rem auto;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+
+  .cta-button {
+    display: inline-block;
+    background-color: var(--primary-green);
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+
+    &:hover {
+      background-color: var(--secondary-green);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+  }
+
+  .cta-button.secondary {
+    background-color: transparent;
+    color: var(--primary-green);
+    border: 2px solid var(--primary-green);
+
+    &:hover {
+      background-color: var(--primary-green);
+      color: #fff;
+    }
+  }
+}
+
+#main-section {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .form-container {
+    max-height: 90vh;
+
+    h1 {
+      font-size: large;
+      margin-bottom: 15px;
+    }
+
+    input {
+      padding: 10px;
+      margin: 5px 0 12px 0;
+    }
+
+    .btn {
+      padding: 10px;
+      font-size: 13px;
+    }
+
+    .divider {
+      margin: 10px 0;
+    }
+  }
+}
+
+/* Struct Form */
+
+.form-group {
+  margin-bottom: 1.5rem;
+
+  label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--secondary-green);
+  }
+
+  .upload-container {
+    margin-bottom: 1rem;
+  }
+
+  .upload-area {
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    &:hover {
+      border-color: #4caf50;
+      background-color: #f0fff0;
+    }
+  }
+
+  .upload-placeholder {
+    i {
+      font-size: 3rem;
+      color: #ccc;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    p {
+      margin: 0.5rem 0;
+      color: #666;
+    }
+
+    small {
+      color: #999;
+    }
+  }
+
+  .single-preview {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    img {
+      max-width: 100%;
+      max-height: 300px;
+      border-radius: 6px;
+      object-fit: contain;
+    }
+
+    .btn-remove {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: #ff4757;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        background: #ff3742;
+      }
+    }
+  }
+
+  .color-picker {
+    margin: 1rem 0;
+
+    .color-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+
+    .color-dot {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+      position: relative;
+      z-index: 1;
+
+      &:hover {
+        transform: scale(1.1);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        z-index: 100;
+      }
+
+      &:hover::after {
+        content: attr(title);
+        position: absolute;
+        bottom: -30px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #333;
+        color: white;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 0.75rem;
+        white-space: nowrap;
+        z-index: 1000;
+      }
+
+      &:hover::before {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        border: 4px solid transparent;
+        border-bottom-color: #333;
+        z-index: 1001;
+      }
+    }
+
+    .color-dot.selected {
+      border-color: #333;
+      box-shadow: 0 0 0 2px white, 0 0 0 3px #333;
+      transform: scale(1.1);
+    }
+
+    .color-dot.disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .color-dots-container {
+    gap: 8px;
+  }
+
+  .color-dot {
+    width: 35px;
+    height: 35px;
+  }
+
+  .color-dot i {
+    font-size: 12px;
+  }
+}
+
+.marker-number {
+  // devo inserirlo qui perchè altrimenti non viene visto da leaflet
+  background-color: #1976d2;
+  color: white;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 14px;
+  border: 2px solid white;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+}
+
+.notification-snackbar {
+  background: #ff0000 !important;
+  color: rgb(0, 0, 0) !important;
+  font-weight: 500;
+  text-align: center;
+}
+
+.offline-snackbar {
+  background: #f44336 !important;
+  color: white !important;
+  font-weight: 500;
+  text-align: center;
+}
+
+.online-snackbar {
+  background: #4caf50 !important;
+  color: white !important;
+  font-weight: 500;
+  text-align: center;
+}
+
+.cdk-overlay-container {
+  z-index: 3000 !important;
+}

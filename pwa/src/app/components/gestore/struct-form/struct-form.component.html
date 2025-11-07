@@ -1,0 +1,123 @@
+@if(showForm) {
+  <div class="form-overlay">
+    <section class="textured-bg form-container">
+      @if(!editMode) {<h2>Aggiungi nuova struttura</h2>} @else {<h2>Modifica struttura</h2>}
+      <form #form="ngForm" class="struct" (ngSubmit)="!editMode ? addStruct() : modifyStruct()">
+        <div class="form-group">
+          <label for="nome"><b>Nome struttura</b></label>
+          <input type="text" id="nome" name="nome" placeholder="Inserisci nome struttura" [(ngModel)]="struct.nome" required>
+        </div>
+
+        <div class="form-group">
+          <label for="citta"><b>Città</b></label>
+          <select id="citta" name="citta" [(ngModel)]="struct.citta" required>
+            <option value="">Seleziona città</option>
+            <option *ngFor="let luogo of luoghi" [value]="luogo.nome">{{ luogo.nome }}</option>
+          </select>
+        </div>
+
+        <!-- Selezione della via con suggerimenti-->
+        <div class="form-group">
+          <label for="via"><b>Via</b></label>
+          <input 
+            type="text" 
+            id="via" 
+            name="via" 
+            placeholder="Inserisci via" 
+            [(ngModel)]="struct.via" 
+            (input)="onViaInput(struct.via)"
+            required
+            autocomplete="off"
+          >
+
+          @if(vieSuggerite.length > 0) {
+            <ul class="suggestions">
+              @for(via of vieSuggerite; track via.name) {
+                <li (click)="selezionaVia(via)">{{ via.name }}</li>
+              } 
+            </ul>
+          }
+        </div>
+
+        <div class="form-group">
+          <label for="civico"><b>Civico</b></label>
+          <input type="number" id="civico" name="civico" placeholder="Inserisci civico" [(ngModel)]="struct.civico" required>
+        </div>
+
+        <div class="form-group">
+          <label for="nLetti"><b>N. letti</b></label>
+          <input type="number" id="nLetti" name="nLetti" placeholder="Inserisci n.letti" [(ngModel)]="struct.nLetti" required default="1" min="1" max="20">
+        </div>
+
+        <div class="form-group">
+          <label for="altreInfo"><b>Altre info</b></label>
+          <input type="text" id="altreInfo" name="altreInfo" placeholder="Inserisci altre info" [(ngModel)]="struct.altreInfo" required>
+        </div>
+        
+        <!-- Selezione del colore -->              
+        <div class="form-group">
+          <label for="coloreStruttura">Scegli un colore per la tua struttura</label>
+          <!-- Input nascosto per il form -->
+          <input type="hidden" id="coloreStruttura" name="coloreStruttura" [(ngModel)]="struct.colore" required>
+          
+          <div class="color-picker">
+            <div class="color-container">
+              @for(colore of coloriDisponibili; track colore) {
+                <div class="color-dot"
+                  [class.disabled]="colore.disabled"
+                  [class.selected]="struct.colore === colore.value"
+                  [style.background-color]="colore.value"
+                  [title]="colore.disabled ? 'Colore già in uso' : colore.name"
+                  (click)="!colore.disabled && selezionaColore(colore.value)"
+                >
+
+                  @if(colore.disabled) {<i class="fas fa-lock"></i>}
+                </div>
+              }
+            </div>
+          </div>
+        </div>
+
+        <!-- Inserimento dell'immagine -->
+        <div class="form-group">
+          <label for="fotoStruttura"><b>Foto struttura</b></label>
+          <div class="upload-container">
+            <input 
+              type="file" 
+              id="fotoStruttura" 
+              name="fotoStruttura" 
+              (change)="onFileSelected($event)" 
+              accept="image/jpeg,image/png,image/webp"
+              style="display: none;"
+            >
+            
+            <!-- Area di upload -->
+            <div class="upload-area" (click)="triggerFileInput()"> 
+              <div class="upload-placeholder" *ngIf="!uploadedImage">
+                <i class="fas fa-camera"></i>
+                <p>Clicca per selezionare una foto</p>
+                <small>Formati supportati: JPG, PNG, WEBP (max 5MB)</small>
+              </div>
+  
+              <!-- Anteprima immagine inserita -->
+              @if(uploadedImage) {
+                <div class="single-preview">
+                  <img [src]="uploadedImage.preview" [alt]="uploadedImage.name">
+                  <button type="button" (click)="removeImage($event)" class="btn-remove"> <i class="fas fa-times"></i> </button>
+                </div>
+              } 
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="cta-button btn-form-confirm">@if(!editMode) {Aggiungi} @else{Salva}</button>
+        @if(editMode) { <button type="button" class="cta-button btn-form-cancel" (click)="eliminaStruttura()">Elimina struttura</button>}
+
+        <p class="error-message">{{error}}</p>
+
+        <div class="divider"></div>
+        <button type="button" class="cta-button btn-form-close" (click)="closeForm()">Close</button>
+      </form>
+    </section>
+  </div>
+}
