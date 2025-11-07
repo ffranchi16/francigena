@@ -55,7 +55,7 @@ export async function subscribe(req: Request, res: Response) {
 }
 
 export async function sendNotificationById(req: Request, res: Response) {
-    const userId = req.params.userId; // userId è una stringa, quindi non è necessaria trasformazione
+    const userId = req.params.userId; // userId Ã¨ una stringa, quindi non Ã¨ necessaria trasformazione
     const payload = req.body;
 
     if (!userId || !payload) {
@@ -86,8 +86,8 @@ export async function sendNotificationById(req: Request, res: Response) {
             console.log('Nessuna subscription per utente', userId);
             res.status(404).json({
                 status: 404,
-                message: "Non è stata trovata alcuna subscription per l'utente ", userId,
-                details: "Prima di inviare una notifica è obbligatorio effettuare un'iscrizione alle notifiche"
+                message: "Non Ã¨ stata trovata alcuna subscription per l'utente ", userId,
+                details: "Prima di inviare una notifica Ã¨ obbligatorio effettuare un'iscrizione alle notifiche"
             });
             return;
         }
@@ -116,7 +116,7 @@ export async function notifyGestore(req: Request, res: Response) {
     const { idStruttura, tipo, dataAlloggio } = req.body;
 
     try {
-        // 1. Trova il gestore della struttura
+        // trova il gestore della struttura
         const { data: struttura, error: errorStruttura } = await supabase
             .from('struttura')
             .select('proprietario, nome')
@@ -133,7 +133,7 @@ export async function notifyGestore(req: Request, res: Response) {
         }
         
 
-        // 2. Prepara il messaggio in base al tipo
+        // prepara il messaggio in base al tipo
         let title, body;
 
         if (tipo === 'inserimento') {
@@ -144,7 +144,7 @@ export async function notifyGestore(req: Request, res: Response) {
             body = `La prenotazione per il giorno ${dataAlloggio} per la struttura ${struttura.nome} e' stata cancellata`;
         }
 
-        // 3. Invia la notifica push
+        // invia la notifica push
         await sendPushNotificationToUser(struttura.proprietario, { title, body, url: `${process.env.APP_URL}/pellegrino/home/${struttura.proprietario}` });
 
         res.status(201).json({
@@ -227,7 +227,7 @@ export async function notifyPellegrino(req: Request, res: Response) {
             }
             pellegriniDaNotificare = data.map(p => p.usernamePellegrino);
             title = 'Prenotazione cancellata';
-            body = `La struttura ${struttura[0].nome} a ${luogoStruct.nome} dove avevi prenotato non esiste più. Cerca un'altra sistemazione!!!`
+            body = `La struttura ${struttura[0].nome} a ${luogoStruct.nome} dove avevi prenotato non esiste piÃ¹. Cerca un'altra sistemazione!!!`
         } else if (tipo == 'inserimento') {
             const { data, error } = await supabase
                 .from('viaggi')
@@ -266,7 +266,7 @@ export async function notifyPellegrino(req: Request, res: Response) {
             body = `E' stata inserita una nuova struttura a ${luogoStruct.nome}, se non hai ancora prenotato la tua struttura dai un occhiata!!!`;
         }
         console.log(pellegriniDaNotificare);
-        // aspetta che tutte le promise all'interno sia terminate e restituisce un solo risultato anzichè un array di risultati
+        // aspetta che tutte le promise all'interno sia terminate e restituisce un solo risultato anzichÃ¨ un array di risultati
         const result = await Promise.allSettled(
             pellegriniDaNotificare.map(async (username) => {
                 await sendPushNotificationToUser(username, { title, body, url: `${process.env.APP_URL}/pellegrino/home/${username}` })
@@ -285,3 +285,4 @@ export async function notifyPellegrino(req: Request, res: Response) {
         });
     }
 }
+
