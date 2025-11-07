@@ -31,7 +31,6 @@ export async function getAllStrutture(req: Request, res: Response): Promise<void
     }
 }
 
-// c'è sempre il problema che non si possono riconoscere gli errori 404 perchè la lista è sempre vuota, quindi non si capisce se è vuota perchè un gestore non ha strutture o perchè un utente non è registrato
 export async function getStruttureByUsr(req: Request, res: Response): Promise<void> {
     const username = req.params.username;
     try {
@@ -228,7 +227,6 @@ export async function getPublicUrl(req:Request, res:Response): Promise<void> {
     }
 }
 
-// per essere RESTful l'id deve essere passato come parametro e il resto nel body
 export async function modifyStruttura(req: Request, res: Response): Promise<void> {
     const id = req.params.id;
     const idNum = parseInt(id, 10);
@@ -407,4 +405,5 @@ export async function getStrutturaById(req: Request, res: Response): Promise<voi
             details: err
         });
     }
+
 }
