@@ -1,9 +1,6 @@
 import { Request, Response } from 'express';
 import supabase from '../db/db';
 
-// per le liste non serve il codice 404 perchè la lista può anche essere vuota
-
-// IN QUESTO CASO FUNZIONA TUTTO PERò NON CONTROLLO SE L'UTENTE ESISTE O MENO, CON IL MIO CODICE FUNZIONA TUTTO PERCHè QUANDO FACCIO LA RICHIESTA SONO SICURO DI CHIAMARLA DA UN UTENTE ESISTENTE, MA STO PROGRAMMANDO PER L'INTERFACCIA??????
 export async function getPrenotazioniByProprietario(req: Request, res: Response): Promise<void> {
     const username = req.params.username;
 
@@ -240,4 +237,5 @@ export async function deletePrenotazione(req: Request, res: Response): Promise<v
             details: err
         });
     }
+
 }
