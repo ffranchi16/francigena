@@ -1,0 +1,182 @@
+[
+    {
+        "id": 1,
+        "nome": "Gran San Bernardo"
+    },
+    {
+        "id": 2,
+        "nome": "Etroubles"
+    },
+    {
+        "id": 3,
+        "nome": "Aosta"
+    },
+    {
+        "id": 4,
+        "nome": "Châtillon"
+    },
+    {
+        "id": 5,
+        "nome": "Verrès"
+    },
+    {
+        "id": 6,
+        "nome": "Pont St.Martin"
+    },
+    {
+        "id": 7,
+        "nome": "Ivrea"
+    },
+    {
+        "id": 8,
+        "nome": "Viverone"
+    },
+    {
+        "id": 9,
+        "nome": "Santhià"
+    },
+    {
+        "id": 10,
+        "nome": "Vercelli"
+    },
+    {
+        "id": 11,
+        "nome": "Robbio"
+    },
+    {
+        "id": 12,
+        "nome": "Mortara"
+    },
+    {
+        "id": 13,
+        "nome": "Garlasco"
+    },
+    {
+        "id": 14,
+        "nome": "Pavia"
+    },
+    {
+        "id": 15,
+        "nome": "Santa Cristina"
+    },
+    {
+        "id": 16,
+        "nome": "Orio Litta"
+    },
+    {
+        "id": 17,
+        "nome": "Piacenza"
+    },
+    {
+        "id": 18,
+        "nome": "Fiorenzuola d’Arda"
+    },
+    {
+        "id": 19,
+        "nome": "Fidenza"
+    },
+    {
+        "id": 20,
+        "nome": "Fornovo"
+    },
+    {
+        "id": 21,
+        "nome": "Cassio"
+    },
+    {
+        "id": 22,
+        "nome": "Passo della Cisa"
+    },
+    {
+        "id": 23,
+        "nome": "Pontremoli"
+    },
+    {
+        "id": 24,
+        "nome": "Aulla"
+    },
+    {
+        "id": 25,
+        "nome": "Avenza"
+    },
+    {
+        "id": 26,
+        "nome": "Pietrasanta"
+    },
+    {
+        "id": 27,
+        "nome": "Lucca"
+    },
+    {
+        "id": 28,
+        "nome": "Altopascio"
+    },
+    {
+        "id": 29,
+        "nome": "San Miniato"
+    },
+    {
+        "id": 30,
+        "nome": "Gambassi Terme"
+    },
+    {
+        "id": 31,
+        "nome": "San Gimignano"
+    },
+    {
+        "id": 32,
+        "nome": "Monteriggioni"
+    },
+    {
+        "id": 33,
+        "nome": "Siena"
+    },
+    {
+        "id": 34,
+        "nome": "Ponte d’Arbia"
+    },
+    {
+        "id": 35,
+        "nome": "San Quirico d’Orcia"
+    },
+    {
+        "id": 36,
+        "nome": "Radicofani"
+    },
+    {
+        "id": 37,
+        "nome": "Acquapendente"
+    },
+    {
+        "id": 38,
+        "nome": "Bolsena"
+    },
+    {
+        "id": 39,
+        "nome": "Montefiascone"
+    },
+    {
+        "id": 40,
+        "nome": "Viterbo"
+    },
+    {
+        "id": 41,
+        "nome": "Vetralla"
+    },
+    {
+        "id": 42,
+        "nome": "Sutri"
+    },
+    {
+        "id": 43,
+        "nome": "Campagnano di Roma"
+    },
+    {
+        "id": 44,
+        "nome": "La Storta"
+    },
+    {
+        "id": 45,
+        "nome": "Roma" 
+    }
+]

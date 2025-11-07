@@ -1,0 +1,399 @@
+/*Info prese da: https://viefrancigene.com/le-tappe-italia/ */
+[
+    {
+        "id": 1,
+        "nome": "Gran San Bernardo - Etroubles",
+        "partenza": "Gran San Bernardo",
+        "arrivo": "Etroubles",
+        "km": 14.90,
+        "durata": 4.00,
+        "gpx": "01-GSB-Etroubles.gpx"
+    },
+    {
+        "id": 2,
+        "nome": "Etroubles - Aosta",
+        "partenza": "Etroubles",
+        "arrivo": "Aosta",
+        "km": 13.60,
+        "durata": 3.30,
+        "gpx": "02-Etroubles-Aosta.gpx"
+    },
+    {
+        "id": 3,
+        "nome": "Aosta - Châtillon",
+        "partenza": "Aosta",
+        "arrivo": "Châtillon",
+        "km": 27.70,
+        "durata": 8.00,
+        "gpx": "03-Aosta-Chatillon.gpx"
+    },
+    {
+        "id": 4,
+        "nome": "Châtillon - Verrès",
+        "partenza": "Châtillon",
+        "arrivo": "Verrès",
+        "km": 19.00,
+        "durata": 6.00,
+        "gpx": "04-Chatillon-Verres.gpx"
+    },
+    {
+        "id": 5,
+        "nome": "Verrès - Pont St.Martin",
+        "partenza": "Verrès",
+        "arrivo": "Pont St.Martin",
+        "km": 14.80,
+        "durata": 4.00,
+        "gpx": "05-Vèrres-PontSaintMartin.gpx"
+    },
+    {
+        "id": 6,
+        "nome": "Pont St.Martin - Ivrea",
+        "partenza": "Pont St.Martin",
+        "arrivo": "Ivrea",
+        "km": 21.50,
+        "durata": 5.30,
+        "gpx": "06-PontSaintMartin-Ivrea.gpx"
+    },
+    {
+        "id": 7,
+        "nome": "Ivrea - Viverone",
+        "partenza": "Ivrea",
+        "arrivo": "Viverone",
+        "km": 20.10,
+        "durata": 5.00,
+        "gpx": "07-Ivrea-Viverone.gpx"
+    },
+    {
+        "id": 8,
+        "nome": "Viverone - Santhià",
+        "partenza": "Viverone",
+        "arrivo": "Santhià",
+        "km": 16.70,
+        "durata": 4.00,
+        "gpx": "08-Viverone-Santhià.gpx"
+    },
+    {
+        "id": 9,
+        "nome": "Santhià - Vercelli",
+        "partenza": "Santhià",
+        "arrivo": "Vercelli",
+        "km": 26.80,
+        "durata": 6.40,
+        "gpx": "09-Santhià-Vercelli.gpx"
+    },
+    {
+        "id": 10,
+        "nome": "Vercelli - Robbio",
+        "partenza": "Vercelli",
+        "arrivo": "Robbio",
+        "km": 18.60,
+        "durata": 4.30,
+        "gpx": "10-Vercelli-Robbio.gpx"
+    },
+    {
+        "id": 11,
+        "nome": "Robbio - Mortara",
+        "partenza": "Robbio",
+        "arrivo": "Mortara",
+        "km": 14.30,
+        "durata": 3.30,
+        "gpx": "11-Robbio-Mortara.gpx"
+    },
+    {
+        "id": 12,
+        "nome": "Mortara - Garlasco",
+        "partenza": "Mortara",
+        "arrivo": "Garlasco",
+        "km": 20.70,
+        "durata": 5.30,
+        "gpx": "12-Mortara-Garlasco.gpx"
+    },
+    {
+        "id": 13,
+        "nome": "Garlasco - Pavia",
+        "partenza": "Garlasco",
+        "arrivo": "Pavia",
+        "km": 25.50,
+        "durata": 6.30,
+        "gpx": "13-Garlasco-Pavia.gpx"
+    },
+    {
+        "id": 14,
+        "nome": "Pavia - Santa Cristina",
+        "partenza": "Pavia",
+        "arrivo": "Santa Cristina",
+        "km": 28.00,
+        "durata": 7.00,
+        "gpx": "14-Pavia-SantaCristina.gpx"
+    },
+    {
+        "id": 15,
+        "nome": "Santa Cristina - Orio Litta",
+        "partenza": "Santa Cristina",
+        "arrivo": "Orio Litta",
+        "km": 16.10,
+        "durata": 4.15,
+        "gpx": "15-SantaCristina-OrioLitta.gpx"
+    },
+    {
+        "id": 16,
+        "nome": "Orio Litta - Piacenza",
+        "partenza": "Orio Litta",
+        "arrivo": "Piacenza",
+        "km": 22.10,
+        "durata": 5.30,
+        "gpx": "16-OrioLitta-Piacenza.gpx"
+    },
+    {
+        "id": 17,
+        "nome": "Piacenza - Fiorenzuola d’Arda",
+        "partenza": "Piacenza",
+        "arrivo": "Fiorenzuola d’Arda",
+        "km": 31.60,
+        "durata": 8.30,
+        "gpx": "17-Piacenza-Fiorenzuola.gpx"
+    },
+    {
+        "id": 18,
+        "nome": "Fiorenzuola d’Arda - Fidenza",
+        "partenza": "Fiorenzuola d’Arda",
+        "arrivo": "Fidenza",
+        "km": 22.30,
+        "durata": 5.30,
+        "gpx": "18-Fiorenzuola-Fidenza.gpx"
+    },
+    {
+        "id": 19,
+        "nome": "Fidenza - Fornovo",
+        "partenza": "Fidenza",
+        "arrivo": "Fornovo",
+        "km": 34.00,
+        "durata": 8.30,
+        "gpx": "19-Fidenza-Fornovo.gpx"
+    },
+    {
+        "id": 20,
+        "nome": "Fornovo - Cassio",
+        "partenza": "Fornovo",
+        "arrivo": "Cassio",
+        "km": 20.90,
+        "durata": 5.30,
+        "gpx": "20-Fornovo-Cassio.gpx"
+    },
+    {
+        "id": 21,
+        "nome": "Cassio - Passo della Cisa",
+        "partenza": "Cassio",
+        "arrivo": "Passo della Cisa",
+        "km": 19.20,
+        "durata": 5.30,
+        "gpx": "21-Cassio-PassoCisa.gpx"
+    },
+    {
+        "id": 22,
+        "nome": "Passo della Cisa - Pontremoli",
+        "partenza": "Passo della Cisa",
+        "arrivo": "Pontremoli",
+        "km": 19.30,
+        "durata": 5.30,
+        "gpx": "22-PassoCisa-Pontremoli.gpx"
+    },
+    {
+        "id": 23,
+        "nome": "Pontremoli - Aulla",
+        "partenza": "Pontremoli",
+        "arrivo": "Aulla",
+        "km": 32.30,
+        "durata": 8.30,
+        "gpx": "23-Pontremoli-Aulla.gpx"
+    },
+    {
+        "id": 24,
+        "nome": "Aulla - Avenza",
+        "partenza": "Aulla",
+        "arrivo": "Avenza",
+        "km": 32.90,
+        "durata": 8.00,
+        "gpx": "24-Aulla-Avenza.gpx"
+    },
+    {
+        "id": 25,
+        "nome": "Avenza - Pietrasanta",
+        "partenza": "Avenza",
+        "arrivo": "Pietrasanta",
+        "km": 29.10,
+        "durata": 6.00,
+        "gpx": "25-Avenza-Pietrasanta.gpx"
+    },
+    {
+        "id": 26,
+        "nome": "Pietrasanta - Lucca",
+        "partenza": "Pietrasanta",
+        "arrivo": "Lucca",
+        "km": 32.40,
+        "durata": 7.30,
+        "gpx": "26-Pietrasanta-Lucca.gpx"
+    },
+    {
+        "id": 27,
+        "nome": "Lucca - Altopascio",
+        "partenza": "Lucca",
+        "arrivo": "Altopascio",
+        "km": 18.50,
+        "durata": 4.30,
+        "gpx": "27-Lucca-Altopascio.gpx"
+    },
+    {
+        "id": 28,
+        "nome": "Altopascio - San Miniato",
+        "partenza": "Altopascio",
+        "arrivo": "San Miniato",
+        "km": 29.00,
+        "durata": 7.00,
+        "gpx": "28-Altopascio-SanMiniato.gpx"
+    },
+    {
+        "id": 29,
+        "nome": "San Miniato - Gambassi Terme",
+        "partenza": "San Miniato",
+        "arrivo": "Gambassi Terme",
+        "km": 24.00,
+        "durata": 7.00,
+        "gpx": "29-SanMiniato-GambassiTerme.gpx"
+    },
+    {
+        "id": 30,
+        "nome": "Gambassi Terme - San Gimignano",
+        "partenza": "Gambassi Terme",
+        "arrivo": "San Gimignano",
+        "km": 13.40,
+        "durata": 3.30,
+        "gpx": "30-GambassiTerme-SanGimignano.gpx"
+    },
+    {
+        "id": 31,
+        "nome": "San Gimignano - Monteriggioni",
+        "partenza": "San Gimignano",
+        "arrivo": "Monteriggioni",
+        "km": 30.90,
+        "durata": 8.00,
+        "gpx": "31-SanGimignano-Monteriggioni.gpx"
+    },
+    {
+        "id": 32,
+        "nome": "Monteriggioni - Siena",
+        "partenza": "Monteriggioni",
+        "arrivo": "Siena",
+        "km": 20.60,
+        "durata": 5.00,
+        "gpx": "32-Monteriggioni-Siena.gpx"
+    },
+    {
+        "id": 33,
+        "nome": "Siena - Ponte d’Arbia",
+        "partenza": "Siena",
+        "arrivo": "Ponte d’Arbia",
+        "km": 25.70,
+        "durata": 6.30,
+        "gpx": "33-Siena-PontedArbia.gpx"
+    },
+    {
+        "id": 34,
+        "nome": "Ponte d’Arbia - San Quirico d’Orcia",
+        "partenza": "Ponte d’Arbia",
+        "arrivo": "San Quirico d’Orcia",
+        "km": 26.20,
+        "durata": 6.30,
+        "gpx": "34-PontedArbia-SanQuirico.gpx"
+    },
+    {
+        "id": 35,
+        "nome": "San Quirico d’Orcia - Radicofani",
+        "partenza": "San Quirico d’Orcia",
+        "arrivo": "Radicofani",
+        "km": 32.20,
+        "durata": 8.30,
+        "gpx": "35-SanQuirico-Radicofani.gpx"
+    },
+    {
+        "id": 36,
+        "nome": "Radicofani - Acquapendente",
+        "partenza": "Radicofani",
+        "arrivo": "Acquapendente",
+        "km": 23.90,
+        "durata": 6.00,
+        "gpx": "36-Radicofani-Acquapendente.gpx"
+    },
+    {
+        "id": 37,
+        "nome": "Acquapendente - Bolsena",
+        "partenza": "Acquapendente",
+        "arrivo": "Bolsena",
+        "km": 22.10,
+        "durata": 5.30,
+        "gpx": "37-Acquapendente-Bolsena.gpx"
+    },
+    {
+        "id": 38,
+        "nome": "Bolsena - Montefiascone",
+        "partenza": "Bolsena",
+        "arrivo": "Montefiascone",
+        "km": 17.70,
+        "durata": 4.30,
+        "gpx": "38-Bolsena-Montefiascone.gpx"
+    },
+    {
+        "id": 39,
+        "nome": "Montefiascone - Viterbo",
+        "partenza": "Montefiascone",
+        "arrivo": "Viterbo",
+        "km": 17.80,
+        "durata": 4.30,
+        "gpx": "39-Montefiascone-Viterbo.gpx"
+    },
+    {
+        "id": 40,
+        "nome": "Viterbo - Vetralla",
+        "partenza": "Viterbo",
+        "arrivo": "Vetralla",
+        "km": 16.90,
+        "durata": 4.15,
+        "gpx": "40-Viterbo-Vetralla.gpx"
+    },
+    {
+        "id": 41,
+        "nome": "Vetralla - Sutri",
+        "partenza": "Vetralla",
+        "arrivo": "Sutri",
+        "km": 23.60,
+        "durata": 6.00,
+        "gpx": "41-Vetralla-Sutri.gpx"
+    },
+    {
+        "id": 42,
+        "nome": "Sutri - Campagnano di Roma",
+        "partenza": "Sutri",
+        "arrivo": "Campagnano di Roma",
+        "km": 23.80,
+        "durata": 6.00,
+        "gpx": "42-Sutri-Campagnano.gpx"
+    },
+    {
+        "id": 43,
+        "nome": "Campagnano di Roma - La Storta",
+        "partenza": "Campagnano di Roma",
+        "arrivo": "La Storta",
+        "km": 22.40,
+        "durata": 6.00,
+        "gpx": "43-Campagnano-LaStorta.gpx"
+    },
+    {
+        "id": 44,
+        "nome": "La Storta - Roma",
+        "partenza": "La Storta",
+        "arrivo": "Roma",
+        "km": 17.20,
+        "durata": 4.20,
+        "gpx": "44-LaStorta-Roma.gpx"
+    }
+]

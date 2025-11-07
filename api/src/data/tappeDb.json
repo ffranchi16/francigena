@@ -1,0 +1,354 @@
+[
+    {
+        "id": 1,
+        "idLuogo1": 1,
+        "idLuogo2": 2,
+        "km": 14.90,
+        "durata": 4.00,
+        "gpx_url": "01-GSB-Etroubles.gpx"
+    },
+    {
+        "id": 2,
+        "idLuogo1": 2,
+        "idLuogo2": 3,
+        "km": 13.60,
+        "durata": 3.30,
+        "gpx_url": "02-Etroubles-Aosta.gpx"
+    },
+    {
+        "id": 3,
+        "idLuogo1": 3,
+        "idLuogo2": 4,
+        "km": 27.70,
+        "durata": 8.00,
+        "gpx_url": "03-Aosta-Chatillon.gpx"
+    },
+    {
+        "id": 4,
+        "idLuogo1": 4,
+        "idLuogo2": 5,
+        "km": 19.00,
+        "durata": 6.00,
+        "gpx_url": "04-Chatillon-Verres.gpx"
+    },
+    {
+        "id": 5,
+        "idLuogo1": 5,
+        "idLuogo2": 6,
+        "km": 14.80,
+        "durata": 4.00,
+        "gpx_url": "05-Vèrres-PontSaintMartin.gpx"
+    },
+    {
+        "id": 6,
+        "idLuogo1": 6,
+        "idLuogo2": 7,
+        "km": 21.50,
+        "durata": 5.30,
+        "gpx_url": "06-PontSaintMartin-Ivrea.gpx"
+    },
+    {
+        "id": 7,
+        "idLuogo1": 7,
+        "idLuogo2": 8,
+        "km": 20.10,
+        "durata": 5.00,
+        "gpx_url": "07-Ivrea-Viverone.gpx"
+    },
+    {
+        "id": 8,
+        "idLuogo1": 8,
+        "idLuogo2": 9,
+        "km": 16.70,
+        "durata": 4.00,
+        "gpx_url": "08-Viverone-Santhià.gpx"
+    },
+    {
+        "id": 9,
+        "idLuogo1": 9,
+        "idLuogo2": 10,
+        "km": 26.80,
+        "durata": 6.40,
+        "gpx_url": "09-Santhià-Vercelli.gpx"
+    },
+    {
+        "id": 10,
+        "idLuogo1": 10,
+        "idLuogo2": 11,
+        "km": 18.60,
+        "durata": 4.30,
+        "gpx_url": "10-Vercelli-Robbio.gpx"
+    },
+    {
+        "id": 11,
+        "idLuogo1": 11,
+        "idLuogo2": 12,
+        "km": 14.30,
+        "durata": 3.30,
+        "gpx_url": "11-Robbio-Mortara.gpx"
+    },
+    {
+        "id": 12,
+        "idLuogo1": 12,
+        "idLuogo2": 13,
+        "km": 20.70,
+        "durata": 5.30,
+        "gpx_url": "12-Mortara-Garlasco.gpx"
+    },
+    {
+        "id": 13,
+        "idLuogo1": 13,
+        "idLuogo2": 14,
+        "km": 25.50,
+        "durata": 6.30,
+        "gpx_url": "13-Garlasco-Pavia.gpx"
+    },
+    {
+        "id": 14,
+        "idLuogo1": 14,
+        "idLuogo2": 15,
+        "km": 28.00,
+        "durata": 7.00,
+        "gpx_url": "14-Pavia-SantaCristina.gpx"
+    },
+    {
+        "id": 15,
+        "idLuogo1": 15,
+        "idLuogo2": 16,
+        "km": 16.10,
+        "durata": 4.15,
+        "gpx_url": "15-SantaCristina-OrioLitta.gpx"
+    },
+    {
+        "id": 16,
+        "idLuogo1": 16,
+        "idLuogo2": 17,
+        "km": 22.10,
+        "durata": 5.30,
+        "gpx_url": "16-OrioLitta-Piacenza.gpx"
+    },
+    {
+        "id": 17,
+        "idLuogo1": 17,
+        "idLuogo2": 18,
+        "km": 31.60,
+        "durata": 8.30,
+        "gpx_url": "17-Piacenza-Fiorenzuola.gpx"
+    },
+    {
+        "id": 18,
+        "idLuogo1": 18,
+        "idLuogo2": 19,
+        "km": 22.30,
+        "durata": 5.30,
+        "gpx_url": "18-Fiorenzuola-Fidenza.gpx"
+    },
+    {
+        "id": 19,
+        "idLuogo1": 19,
+        "idLuogo2": 20,
+        "km": 34.00,
+        "durata": 8.30,
+        "gpx_url": "19-Fidenza-Fornovo.gpx"
+    },
+    {
+        "id": 20,
+        "idLuogo1": 20,
+        "idLuogo2": 21,
+        "km": 20.90,
+        "durata": 5.30,
+        "gpx_url": "20-Fornovo-Cassio.gpx"
+    },
+    {
+        "id": 21,
+        "idLuogo1": 21,
+        "idLuogo2": 22,
+        "km": 19.20,
+        "durata": 5.30,
+        "gpx_url": "21-Cassio-PassoCisa.gpx"
+    },
+    {
+        "id": 22,
+        "idLuogo1": 22,
+        "idLuogo2": 23,
+        "km": 19.30,
+        "durata": 5.30,
+        "gpx_url": "22-PassoCisa-Pontremoli.gpx"
+    },
+    {
+        "id": 23,
+        "idLuogo1": 23,
+        "idLuogo2": 24,
+        "km": 32.30,
+        "durata": 8.30,
+        "gpx_url": "23-Pontremoli-Aulla.gpx"
+    },
+    {
+        "id": 24,
+        "idLuogo1": 24,
+        "idLuogo2": 25,
+        "km": 32.90,
+        "durata": 8.00,
+        "gpx_url": "24-Aulla-Avenza.gpx"
+    },
+    {
+        "id": 25,
+        "idLuogo1": 25,
+        "idLuogo2": 26,
+        "km": 29.10,
+        "durata": 6.00,
+        "gpx_url": "25-Avenza-Pietrasanta.gpx"
+    },
+    {
+        "id": 26,
+        "idLuogo1": 26,
+        "idLuogo2": 27,
+        "km": 32.40,
+        "durata": 7.30,
+        "gpx_url": "26-Pietrasanta-Lucca.gpx"
+    },
+    {
+        "id": 27,
+        "idLuogo1": 27,
+        "idLuogo2": 28,
+        "km": 18.50,
+        "durata": 4.30,
+        "gpx_url": "27-Lucca-Altopascio.gpx"
+    },
+    {
+        "id": 28,
+        "idLuogo1": 28,
+        "idLuogo2": 29,
+        "km": 29.00,
+        "durata": 7.00,
+        "gpx_url": "28-Altopascio-SanMiniato.gpx"
+    },
+    {
+        "id": 29,
+        "idLuogo1": 29,
+        "idLuogo2": 30,
+        "km": 24.00,
+        "durata": 7.00,
+        "gpx_url": "29-SanMiniato-GambassiTerme.gpx"
+    },
+    {
+        "id": 30,
+        "idLuogo1": 30,
+        "idLuogo2": 31,
+        "km": 13.40,
+        "durata": 3.30,
+        "gpx_url": "30-GambassiTerme-SanGimignano.gpx"
+    },
+    {
+        "id": 31,
+        "idLuogo1": 31,
+        "idLuogo2": 32,
+        "km": 30.90,
+        "durata": 8.00,
+        "gpx_url": "31-SanGimignano-Monteriggioni.gpx"
+    },
+    {
+        "id": 32,
+        "idLuogo1": 32,
+        "idLuogo2": 33,
+        "km": 20.60,
+        "durata": 5.00,
+        "gpx_url": "32-Monteriggioni-Siena.gpx"
+    },
+    {
+        "id": 33,
+        "idLuogo1": 33,
+        "idLuogo2": 34,
+        "km": 25.70,
+        "durata": 6.30,
+        "gpx_url": "33-Siena-PontedArbia.gpx"
+    },
+    {
+        "id": 34,
+        "idLuogo1": 34,
+        "idLuogo2": 35,
+        "km": 26.20,
+        "durata": 6.30,
+        "gpx_url": "34-PontedArbia-SanQuirico.gpx"
+    },
+    {
+        "id": 35,
+        "idLuogo1": 35,
+        "idLuogo2": 36,
+        "km": 32.20,
+        "durata": 8.30,
+        "gpx_url": "35-SanQuirico-Radicofani.gpx"
+    },
+    {
+        "id": 36,
+        "idLuogo1": 36,
+        "idLuogo2": 37,
+        "km": 23.90,
+        "durata": 6.00,
+        "gpx_url": "36-Radicofani-Acquapendente.gpx"
+    },
+    {
+        "id": 37,
+        "idLuogo1": 37,
+        "idLuogo2": 38,
+        "km": 22.10,
+        "durata": 5.30,
+        "gpx_url": "37-Acquapendente-Bolsena.gpx"
+    },
+    {
+        "id": 38,
+        "idLuogo1": 38,
+        "idLuogo2": 39,
+        "km": 17.70,
+        "durata": 4.30,
+        "gpx_url": "38-Bolsena-Montefiascone.gpx"
+    },
+    {
+        "id": 39,
+        "idLuogo1": 39,
+        "idLuogo2": 40,
+        "km": 17.80,
+        "durata": 4.30,
+        "gpx_url": "39-Montefiascone-Viterbo.gpx"
+    },
+    {
+        "id": 40,
+        "idLuogo1": 40,
+        "idLuogo2": 41,
+        "km": 16.90,
+        "durata": 4.15,
+        "gpx_url": "40-Viterbo-Vetralla.gpx"
+    },
+    {
+        "id": 41,
+        "idLuogo1": 41,
+        "idLuogo2": 42,
+        "km": 23.60,
+        "durata": 6.00,
+        "gpx_url": "41-Vetralla-Sutri.gpx"
+    },
+    {
+        "id": 42,
+        "idLuogo1": 42,
+        "idLuogo2": 43,
+        "km": 23.80,
+        "durata": 6.00,
+        "gpx_url": "42-Sutri-Campagnano.gpx"
+    },
+    {
+        "id": 43,
+        "idLuogo1": 43,
+        "idLuogo2": 44,
+        "km": 22.40,
+        "durata": 6.00,
+        "gpx_url": "43-Campagnano-LaStorta.gpx"
+    },
+    {
+        "id": 44,
+        "idLuogo1": 44,
+        "idLuogo2": 45,
+        "km": 17.20,
+        "durata": 4.20,
+        "gpx_url": "44-LaStorta-Roma.gpx"
+    }
+]

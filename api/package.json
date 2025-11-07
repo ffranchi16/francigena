@@ -1,0 +1,32 @@
+{
+  "name": "api-francigena",
+  "version": "1.0.0",
+  "description": "",
+  "license": "MIT",
+  "author": "Franchi Filippo",
+  "type": "commonjs",
+  "main": "dist/server.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/server.js"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.1",
+    "@types/multer": "^2.0.0",
+    "@types/web-push": "^3.6.4",
+    "ts-node": "^10.9.2",
+    "tsup": "^8.4.0",
+    "typescript": "^5.8.2"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.58.0",
+    "@types/dotenv": "^6.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^4.21.2",
+    "i": "^0.3.7",
+    "multer": "^2.0.2",
+    "web-push": "^3.6.7"
+  }
+}
